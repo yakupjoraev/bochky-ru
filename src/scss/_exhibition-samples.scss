@@ -1,0 +1,272 @@
+.exhibition-samples {
+  padding: 100px 0 70px;
+  background: #FFF;
+
+  @media (max-width: $breakpoint768) {
+    padding: 60px 0;
+  }
+
+
+  // .exhibition-samples__inner
+
+  &__inner {
+    padding: 100px 80px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 60px 60px 0px rgba(70, 70, 70, 0.06);
+
+    @media (max-width: $breakpoint1200) {
+      padding: 60px 40px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      padding: 20px;
+    }
+
+  }
+
+  // .exhibition-samples__title
+
+  &__title {
+    max-width: 840px;
+    margin: 0 auto 46px;
+
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 24px;
+    }
+
+  }
+
+  // .exhibition-samples__main
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    column-gap: 24px;
+
+    @media (max-width: $breakpoint992) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+
+  // .exhibition-samples__slider
+
+  &__slider {
+    flex: 0 0 470px;
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 1 auto;
+      width: 100%;
+    }
+  }
+
+  // .exhibition-samples__wrapper
+
+  &__wrapper {}
+
+  // .exhibition-samples__slide
+
+  &__slide {}
+
+  // .exhibition-samples__picture
+
+  &__picture {
+    margin-bottom: 30px;
+
+    img {
+      border-radius: 14px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      text-align: center;
+    }
+
+    @media (max-width: $breakpoint768) {
+      img {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+  }
+
+  // .exhibition-samples__address
+
+  &__address {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 12px;
+    margin-bottom: 50px;
+
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 30px;
+    }
+
+  }
+
+  // .exhibition-samples__address-text
+
+  &__address-text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    @media (max-width: $breakpoint768) {
+      row-gap: 6px;
+    }
+
+  }
+
+  // .exhibition-samples__address-link
+
+  &__address-link {
+    width: fit-content;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.60);
+    color: rgba(0, 0, 0, 0.60);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%;
+    transition: color 0.2s linear, border 0.2s linear;
+
+
+    &:hover {
+      color: #E95229;
+      border-color: #E95229;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 14px;
+    }
+
+    @media (max-width:359px) {
+      border: 0;
+      text-decoration: underline;
+    }
+  }
+
+  // .exhibition-samples__btn
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    width: fit-content;
+    padding: 24px 56px;
+    border-radius: 1000px;
+    background-color: #E95229;
+    box-shadow: 0px 0px 15px 0px #FFF inset;
+    transition: box-shadow 0.2s linear;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpoint768) {
+      padding: 24px;
+      width: 100%;
+    }
+
+
+    @media (max-width:359px) {
+      padding: 20px;
+      width: 100%;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 20px 0px #E95229 inset;
+    }
+  }
+
+  // .exhibition-samples__arrow
+
+  &__arrow {
+    position: absolute;
+    top: 130px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+    }
+
+    @media (max-width: $breakpoint768) {
+      top: 80px;
+      width: 30px;
+      height: 30px;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+  }
+
+  // .exhibition-samples__arrow--prev
+
+  &__arrow--prev {
+    left: 16px;
+
+    @media (max-width: $breakpoint768) {
+      left: 10px;
+    }
+
+  }
+
+  // .exhibition-samples__arrow--next
+
+  &__arrow--next {
+    right: 16px;
+
+    @media (max-width: $breakpoint768) {
+      right: 10px;
+    }
+
+  }
+
+  // .exhibition-samples__map
+
+  &__map {
+    flex: 0 1 570px;
+    height: 520px;
+    border-radius: 14px;
+
+    img {
+      max-width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+    }
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 1 auto;
+      height: 400px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: $breakpoint768) {
+      height: 275px;
+    }
+
+  }
+}

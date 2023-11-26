@@ -376,11 +376,29 @@
 }
 
 .thanks-videos {
+  position: relative;
   padding: 90px 0 100px;
   background-color: #FBFBFB;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: -20%;
+    background-image: url('../img/thanks-videos/thanks-videos-bg.png');
+    background-repeat: no-repeat;
+    width: 705.018px;
+    height: 1075px;
+    // transform: rotate(-41.986deg);
+  }
 
   @media (max-width: $breakpoint768) {
     padding: 60px 0;
+
+    &::before {
+      content: none;
+    }
   }
 
   // .thanks-videos__inner
