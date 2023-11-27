@@ -327,6 +327,9 @@ map();
 
 function updateDate() {
   var currentDateElement = document.getElementById('current-date');
+  if (!currentDateElement) {
+    return null
+  }
   var currentDate = new Date();
 
   var day = currentDate.getDate();
