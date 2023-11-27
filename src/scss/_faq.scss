@@ -167,6 +167,7 @@
     }
 
     span {
+      opacity: 1;
       margin-bottom: 0;
       white-space: nowrap;
       color: #FFF;
@@ -205,6 +206,10 @@
 
   @media (max-width: $breakpoint992) {
     padding-top: 0;
+
+    .exhibition-samples__inner {
+      margin-bottom: 80px;
+    }
   }
 
   @media (max-width: $breakpoint768) {
@@ -212,6 +217,7 @@
 
     .exhibition-samples__inner {
       margin-top: -40px;
+      margin-bottom: 60px;
     }
   }
 }

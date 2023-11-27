@@ -69,7 +69,8 @@ function thanksReviewsSlider() {
 
   const swiper = new Swiper('.thanks-reviews__slider', {
     // Optional parameters
-    slidesPerView: 1.2,
+    slidesPerView: 1,
+    centeredSlides: true,
     spaceBetween: 10,
     loop: true,
 
@@ -84,13 +85,14 @@ function thanksReviewsSlider() {
     breakpoints: {
       // when window width is >= 320px
       320: {
-        slidesPerView: 1.2,
+        slidesPerView: 1,
         spaceBetween: 10,
       },
       // when window width is >= 767px
       767: {
         slidesPerView: 3,
         spaceBetween: 20,
+        centeredSlides: false,
       },
       // when window width is >= 991px
       // 991: {
@@ -170,6 +172,31 @@ function exhibitionSamplesSlider() {
 
 exhibitionSamplesSlider();
 
+function heroSlider() {
+  const container = document.querySelector('.hero');
+
+  if (!container) {
+    return null
+  }
+
+  const swiper = new Swiper('.exhibition-samples__slider', {
+    // Optional parameters
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.hero__slider-arrow--next',
+      prevEl: '.hero__slider-arrow--prev',
+    },
+
+  });
+}
+
+heroSlider();
+
 document.addEventListener('DOMContentLoaded', function () {
   const sliders = document.querySelectorAll('.slider');
   sliders.forEach(function (slider) {
@@ -248,6 +275,75 @@ function toggleAccordion() {
 
 accordionItems.forEach(item => item.addEventListener('click', toggleAccordion));
 
+function map() {
+  const container = document.querySelector('.exhibition-samples__map')
+  if (!container) {
+    return null
+  }
+
+  let coordinates = [
+    [55.786225, 37.248134],
+    [55.779502, 37.855675],
+    [55.8204, 37.3302],
+    [55.6183, 37.4711],
+    // Add more coordinates as needed
+  ];
+
+  function init() {
+
+
+    let map = new ymaps.Map('exhibition-samples-map', {
+      center: [55.751244, 37.618423],
+      zoom: 9
+    });
+
+    coordinates.forEach(coord => {
+      let placemark = new ymaps.Placemark(coord, {}, {
+        iconLayout: 'default#image',
+        // iconImageHref: '../img/icons/pin.svg',
+        // iconImageHref: '/local/templates/main/img/icons/pin.svg',
+        iconImageSize: [42, 42],
+        iconImageOffset: [-14, -64]
+      });
+
+      map.geoObjects.add(placemark);
+    });
+
+    map.controls.remove('geolocationControl'); // удаляем геолокацию
+    map.controls.remove('searchControl'); // удаляем поиск
+    map.controls.remove('trafficControl'); // удаляем контроль трафика
+    map.controls.remove('typeSelector'); // удаляем тип
+    map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+    map.controls.remove('rulerControl'); // удаляем контрол правил
+    // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+  }
+
+  ymaps.ready(init);
+}
+
+map();
+
+function updateDate() {
+  var currentDateElement = document.getElementById('current-date');
+  var currentDate = new Date();
+
+  var day = currentDate.getDate();
+  var month = currentDate.getMonth() + 1; // Месяцы в JavaScript начинаются с 0
+  var year = currentDate.getFullYear();
+
+  // Форматирование даты как "DD.MM.YYYY"
+  var formattedDate = (day < 10 ? '0' : '') + day + '.' + (month < 10 ? '0' : '') + month + '.' + year;
+
+  // Установка отформатированной даты в элемент с id="current-date"
+  currentDateElement.textContent = formattedDate;
+}
+
+// Вызов функции updateDate при загрузке страницы
+updateDate();
+
+// Запуск функции updateDate каждый день (в миллисекундах)
+setInterval(updateDate, 24 * 60 * 60 * 1000);
 
 Fancybox.bind("[data-fancybox]", {
   // Your custom options

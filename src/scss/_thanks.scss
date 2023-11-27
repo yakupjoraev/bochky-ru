@@ -61,6 +61,12 @@
       max-width: 100%;
       width: 100%;
     }
+
+    @media (max-width: $breakpoint768) {
+      height: 338px;
+      max-height: 338px;
+      overflow: hidden;
+    }
   }
 
   // .thanks-hero__name
@@ -86,6 +92,10 @@
       bottom: 10%;
     }
 
+
+    @media (max-width: $breakpoint768) {
+      bottom: 5%;
+    }
 
     b {
       text-align: center;
@@ -643,6 +653,10 @@
     @media (max-width: $breakpoint768) {
       display: flex;
       align-items: center;
+
+      img {
+        margin: 0 auto;
+      }
     }
   }
 
@@ -662,7 +676,7 @@
 
 
     @media (max-width: $breakpoint768) {
-      display: none;
+      // display: none;
     }
   }
 
@@ -680,7 +694,11 @@
 }
 
 .thanks-info__block {
-  padding: 100px 0;
+  padding: 100px 0 0;
+
+  @media (max-width: $breakpoint768) {
+    padding: 60px 0 0;
+  }
 }
 
 .thanks-info__title {

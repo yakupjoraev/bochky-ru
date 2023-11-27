@@ -207,14 +207,12 @@
     }
 
     @media (max-width: $breakpoint768) {
-      top: 80px;
-      width: 30px;
-      height: 30px;
+      top: 24%;
+      transform: translateY(-50%);
+    }
 
-      img {
-        width: 30px;
-        height: 30px;
-      }
+    @media (max-width:359px) {
+      top: 18%;
     }
 
   }

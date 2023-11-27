@@ -44,3 +44,10 @@ body {
     opacity: 1;
   }
 }
+
+.ymaps-2-1-79-gotoymaps__container,
+.ymaps-2-1-79-gototech,
+.ymaps-2-1-79-copyright__content-cell {
+  opacity: 0;
+  z-index: -100;
+}

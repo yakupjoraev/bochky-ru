@@ -106,6 +106,10 @@
 
     @media (max-width: $breakpoint992) {
       width: 100% !important;
+
+      img {
+        width: 100%;
+      }
     }
 
   }
