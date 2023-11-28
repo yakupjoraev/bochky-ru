@@ -172,6 +172,17 @@ function exhibitionSamplesSlider() {
 
 exhibitionSamplesSlider();
 
+function heroMargin() {
+  const hero = document.querySelector('.hero');
+  const header = document.querySelector('.header');
+  const headerHeight = header.offsetHeight;
+
+  hero.style.marginTop = `-${headerHeight}px`;
+}
+
+heroMargin();
+
+
 function heroSlider() {
   const container = document.querySelector('.hero');
 
@@ -179,7 +190,7 @@ function heroSlider() {
     return null
   }
 
-  const swiper = new Swiper('.exhibition-samples__slider', {
+  const swiper = new Swiper('.hero__slider', {
     // Optional parameters
     slidesPerView: 1,
     spaceBetween: 10,
