@@ -2146,6 +2146,10 @@ body.locked {
   text-align: left;
 }
 
+.hero__title--mini {
+  font-size: 36px;
+}
+
 .hero__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2197,6 +2201,25 @@ body.locked {
 
 .hero__calculation-label b {
   font-weight: 600;
+}
+
+.hero__calculation-label--second {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  font-size: 20px;
+}
+
+.hero__calculation-label--second svg {
+  min-width: 22px;
+  margin-top: 10px;
 }
 
 .hero__calculation-btn {
@@ -3395,6 +3418,10 @@ body.locked {
     margin-bottom: 40px;
     font-size: 18px;
     max-width: 100%;
+  }
+
+  .hero__calculation-label--second svg {
+    margin-top: 8px;
   }
 
   .hero__calculation-btn {
