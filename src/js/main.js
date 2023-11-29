@@ -311,7 +311,7 @@ function map() {
     coordinates.forEach(coord => {
       let placemark = new ymaps.Placemark(coord, {}, {
         iconLayout: 'default#image',
-        iconImageHref: '../img/pin.svg',
+        iconImageHref: './img/pin.svg',
         // iconImageHref: '/local/templates/main/img/icons/pin.svg',
         iconImageSize: [42, 42],
         iconImageOffset: [-14, -64]
