@@ -199,6 +199,7 @@ function heroSlider() {
     // Optional parameters
     slidesPerView: 1,
     spaceBetween: 10,
+    cssMode: true,
     loop: true,
 
 

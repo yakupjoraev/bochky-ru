@@ -5215,10 +5215,9 @@ body.locked {
 
   .hero__slider-container {
     padding: 10px 8px;
-  }
-
-  .hero__slider {
-    max-width: auto;
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .hero__slide {
