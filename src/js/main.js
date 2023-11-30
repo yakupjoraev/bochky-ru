@@ -174,6 +174,10 @@ exhibitionSamplesSlider();
 
 function heroMargin() {
   const hero = document.querySelector('.hero');
+
+  if (!hero) {
+    return null
+  }
   const header = document.querySelector('.header');
   const headerHeight = header.offsetHeight;
 
@@ -437,4 +441,29 @@ window.addEventListener('click', (event) => {
 
 Fancybox.bind("[data-fancybox]", {
   // Your custom options
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var customStopVideo = () => {
+    var iframe = document.querySelectorAll('iframe');
+    Array.prototype.forEach.call(iframe, iframe => {
+      iframe.contentWindow.postMessage(JSON.stringify({
+        event: 'command',
+        func: 'stopVideo'
+      }), '*');
+    });
+  }
+
+  document.querySelector(".close-modal-btn").onclick = function () {
+    customStopVideo();
+  };
+
+  // Добавьте код для закрытия модального окна при клике в других областях страницы.
+  document.addEventListener('click', function (event) {
+    var modal = document.querySelector('.modal'); // Замените '.your-modal-class' на класс вашей модалки
+    if (event.target !== modal && !modal.contains(event.target)) {
+      // Код для закрытия модалки, например, modal.style.display = 'none';
+      customStopVideo();
+    }
+  });
 });

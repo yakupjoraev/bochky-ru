@@ -55,6 +55,7 @@
     pointer-events: none;
 
     img {
+      width: 875px;
       user-select: none;
       pointer-events: none;
     }
@@ -110,7 +111,7 @@
     }
 
     &:nth-child(2) {
-      left: 450px;
+      left: 440px;
       top: 66px;
 
       p {
@@ -157,7 +158,7 @@
     }
 
     &:nth-child(6) {
-      bottom: 5px;
+      bottom: 0;
       left: 204px;
 
       @media (max-width: $breakpoint1200) {
@@ -168,8 +169,8 @@
     }
 
     &:nth-child(7) {
-      bottom: 20px;
-      left: 540px;
+      bottom: 30px;
+      left: 530px;
 
       @media (max-width: $breakpoint1200) {
         left: 400px;
@@ -179,7 +180,7 @@
 
     &:nth-child(8) {
       right: 30px;
-      bottom: 30px;
+      bottom: 20px;
     }
 
     h4 {
@@ -258,8 +259,8 @@
     text-align: center;
 
     img {
-      max-width: 100%;
-      // width: 100%;
+      max-width: 500px;
+      width: 100%;
     }
 
     @media (max-width: $breakpoint480) {
@@ -349,8 +350,8 @@
     transform: translateY(-50%);
     cursor: pointer;
 
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
 
     img {
       width: 100%;

@@ -20,7 +20,7 @@
     width: 480px;
     height: 875px;
     transform: rotate(0);
-    background-image: url('../img/info/info-bg-2.png');
+    background-image: url('../img/info/info-bg-2.webp');
     background-repeat: no-repeat;
     background-size: contain;
     z-index: -1;
@@ -38,7 +38,7 @@
     width: 700px;
     height: 875px;
     transform: rotate(0);
-    background-image: url('../img/info/info-bg-1.png');
+    background-image: url('../img/info/info-bg-1.webp');
     background-repeat: no-repeat;
     background-size: contain;
     z-index: -1;
@@ -76,15 +76,21 @@
     @media (max-width: $breakpoint768) {
       overflow-x: auto;
     }
+
+    @media (max-width: $breakpoint480) {
+      border-radius: 20px 0 0 20px;
+    }
   }
 
   // .info__item
 
   &__item {
+    margin-top: 100px;
 
     @media (max-width: $breakpoint768) {
       width: 100%;
-      min-width: 1044px;
+      min-width: fit-content;
+      margin-top: 20px;
     }
   }
 
@@ -92,9 +98,23 @@
 
   &__item-header {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 270px 1fr;
     align-items: center;
     justify-items: center;
+
+    &>* {
+      margin-top: -100px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      &>* {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: $breakpoint480) {
+      grid-template-columns: 245px 345px 345px;
+    }
   }
 
   // .info__item-pic
@@ -131,7 +151,7 @@
       height: 38px;
       border-radius: 100%;
 
-      background-image: url('../img/info/x.png');
+      background-image: url('../img/info/x.webp');
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -190,7 +210,7 @@
       height: 38px;
       border-radius: 100%;
 
-      background-image: url('../img/info/check.png');
+      background-image: url('../img/info/check.webp');
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -211,13 +231,18 @@
       margin-top: 30px;
       padding: 0 30px 30px;
     }
+
+    @media (max-width: $breakpoint480) {
+      margin-top: 20px;
+      padding: 0 20px 20px;
+    }
   }
 
   // .info__item-row
 
   &__item-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 270px 1fr;
 
     border-bottom: 1px solid rgba(224, 224, 224, 0.70);
 
@@ -249,6 +274,10 @@
           order: 2;
         }
       }
+
+      @media (max-width: $breakpoint480) {
+        margin-right: 1px;
+      }
     }
 
     &>P {
@@ -271,8 +300,16 @@
         & {
           order: 1;
         }
-
       }
+
+      @media (max-width: $breakpoint480) {
+        margin-right: 1px;
+      }
+    }
+
+
+    @media (max-width: $breakpoint480) {
+      grid-template-columns: 245px 345px 345px;
     }
   }
 
