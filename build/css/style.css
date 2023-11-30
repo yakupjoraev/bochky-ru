@@ -2186,7 +2186,7 @@ body.locked {
   width: 26px;
   min-width: 26px;
   height: 26px;
-  background-image: url("../img/hero/check.webp");
+  background-image: url("../img/hero/check.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -2380,7 +2380,13 @@ body.locked {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 1;
+  border-radius: 100%;
+  overflow: hidden;
   cursor: pointer;
+}
+
+.hero__slider-arrow img {
+  border-radius: 100%;
 }
 
 .hero__slider-arrow--prev {

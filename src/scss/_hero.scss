@@ -122,7 +122,7 @@
       width: 26px;
       min-width: 26px;
       height: 26px;
-      background-image: url('../img/hero/check.webp');
+      background-image: url('../img/hero/check.svg');
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -416,7 +416,13 @@
     top: 38%;
     transform: translateY(-50%);
     z-index: 1;
+    border-radius: 100%;
+    overflow: hidden;
     cursor: pointer;
+
+    img {
+      border-radius: 100%;
+    }
 
     @media (max-width: $breakpoint480) {
       top: 30%;
