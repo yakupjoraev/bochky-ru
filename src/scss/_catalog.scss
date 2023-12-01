@@ -5,6 +5,7 @@
   background-image: url('../img/catalog/catalog-bg.webp');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 
   @media (max-width: $breakpoint768) {
     padding: 60px 0;

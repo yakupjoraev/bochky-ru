@@ -124,6 +124,12 @@
     height: 148px;
     border-radius: 100%;
 
+    img {
+      width: 148px;
+      height: 148px;
+      object-fit: cover;
+    }
+
     @media (max-width: $breakpoint992) {
       width: 120px;
       height: 120px;
