@@ -491,7 +491,7 @@
 
     @media (max-width: $breakpoint768) {
       grid-template-columns: repeat(1, 1fr);
-      row-gap: 10px;
+      row-gap: 0;
       justify-items: center;
 
       &::before {
@@ -517,6 +517,10 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
+
+    &:nth-child(even) {
+      margin: -10px 0 -20px;
+    }
 
     &:nth-child(3) {
       position: relative;
