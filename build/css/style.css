@@ -1879,9 +1879,8 @@ body.locked {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  row-gap: 18px;
   width: 32%;
-  margin-bottom: -50px;
+  margin-bottom: -10px;
 }
 
 .catalog__down-link {
@@ -4084,6 +4083,8 @@ body.locked {
 
   .catalog__down {
     width: auto;
+    row-gap: 18px;
+    margin-bottom: -20px;
   }
 
   .case {
