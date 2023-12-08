@@ -412,17 +412,117 @@ document.addEventListener('scroll', () => {
   }
 })
 
+function phoneMask() {
+  const formContainer = document.querySelector('.modal-form');
+
+  if (!formContainer) {
+    return null;
+  }
+
+  let formPhones = document.querySelectorAll('.js-input-phone');
+
+  formPhones.forEach(formPhone => {
+    const mask = IMask(formPhone, {
+      mask: [
+        {
+          mask: '+{7}(000)000-00-00',
+          startsWith: '7',
+          prepare: value => (value[0] === '8' ? value.slice(1) : value)
+        },
+        {
+          mask: '8(000)000-00-00',
+          startsWith: '8',
+        }
+      ]
+    });
+
+  });
+}
+
+phoneMask();
+
+// validate////////////////////////////////////////////////////////////////////////////////////////////////////////
+let forms = document.querySelectorAll('.modal-form');
+
+forms.forEach(form => {
+  let formInputs = form.querySelectorAll('.js-input'),
+    inputPhone = form.querySelector('.js-input-phone');
+
+  function validatePhone(phone) {
+    let re = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+    return re.test(String(phone));
+  }
+
+  function hasClassInParents(element, className) {
+    // Рекурсивная функция для проверки наличия класса в родителях элемента
+    if (element.classList.contains(className)) {
+      return true;
+    } else if (element.parentElement) {
+      return hasClassInParents(element.parentElement, className);
+    } else {
+      return false;
+    }
+  }
+
+  form.onsubmit = function () {
+    if (!hasClassInParents(form, 'show')) {
+      // Если у одного из родителей формы нет класса 'show', игнорируем валидацию
+      return true;
+    }
+
+    let phoneVal = inputPhone.value,
+      emptyInputs = Array.from(formInputs).filter(input => input.value === '');
+
+    formInputs.forEach(function (input) {
+      if (input.value === '') {
+        input.classList.add('error');
+        console.log('input not filled');
+      } else {
+        input.classList.remove('error');
+      }
+    });
+
+    if (emptyInputs.length !== 0) {
+      console.log('inputs not filled');
+      return false;
+    }
+
+    if (!validatePhone(phoneVal)) {
+      console.log('phone not valid');
+      inputPhone.classList.add('error');
+      return false;
+    } else {
+      inputPhone.classList.remove('error');
+    }
+  };
+});
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
 const openModalBtns = document.querySelectorAll('.open-modal-btn');
 const closeModalBtns = document.querySelectorAll('.close-modal-btn');
 const modals = document.querySelectorAll('.modal');
 
+function openModal(modalId) {
+  // Закрыть все открытые модальные окна
+  modals.forEach(modal => {
+    modal.classList.remove('show');
+  });
+
+  // Открыть новое модальное окно
+  const modal = document.getElementById(modalId);
+  modal.classList.add('show');
+}
+
 openModalBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const modalId = btn.dataset.modalId;
-    const modal = document.getElementById(modalId);
-    modal.classList.add('show');
+    openModal(modalId);
   });
 });
 
@@ -438,6 +538,7 @@ window.addEventListener('click', (event) => {
     event.target.classList.remove('show');
   }
 });
+
 
 
 Fancybox.bind("[data-fancybox]", {

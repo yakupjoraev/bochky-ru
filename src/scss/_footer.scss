@@ -102,6 +102,24 @@
       font-weight: 400;
       line-height: 43px;
     }
+
+    .path-1 {
+      transition: all 0.2s linear;
+    }
+
+    .path-2 {
+      transition: all 0.2s linear;
+    }
+
+    a:hover {
+      .path-1 {
+        fill: #FAD700;
+      }
+
+      .path-2 {
+        fill: #2B2A29;
+      }
+    }
   }
 
   // .footer__contacts
