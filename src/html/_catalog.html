@@ -5,25 +5,27 @@
         Получите <span>каталог из&nbsp;50&nbsp;типовых бань с&nbsp;ценами</span> и&nbsp;доп. опциями
       </h3>
 
-      <div class="catalog__main">
+      <div class="catalog__main show">
         <form class="catalog__form modal-form" action="#">
+          <input type="text" hidden name="Получите каталог">
+
           <p class="catalog__form-label">Отправим PDF-файл вам на почту и в WhatsApp</p>
 
           <div class="catalog__form-group">
-            <input class="catalog__form-input" type="email" placeholder="Ваша почта*">
-            <img src="./img/catalog/email.svg" alt="email">
+            <input class="catalog__form-input js-input js-input-email" type="email" placeholder="Ваша почта*">
+            <img class="lazy-loaded" data-src="./img/catalog/email.svg" alt="email">
           </div>
 
           <div class="catalog__form-group">
             <input class="catalog__form-input js-input js-input-phone" type="tel" placeholder="Ваш телефон*">
-            <img src="./img/catalog/phone.svg" alt="phone">
+            <img class="lazy-loaded" data-src="./img/catalog/phone.svg" alt="phone">
           </div>
 
-          <a class="catalog__form-btn open-modal-btn" data-modal-id="modal2" href="javascript:void(0);">
-            <img src="./img/catalog/down.svg" alt="icon downloud">
+          <button type="submit" class="catalog__form-btn">
+            <img class="lazy-loaded" data-src="./img/catalog/down.svg" alt="icon downloud">
 
             <span>Получить каталог с ценами</span>
-          </a>
+          </button>
 
           <p class="catalog__form-political">
             Мы соблюдаем политику конфиденциальности <br>
@@ -33,7 +35,7 @@
 
         <div class="catalog__down">
           <a class="catalog__down-link" href="" download="">
-            <img src="./img/catalog/cloud.svg" alt="cloud">
+            <img class="lazy-loaded" data-src="./img/catalog/cloud.svg" alt="cloud">
             PDF,<br>
             3,5 Mb
           </a>

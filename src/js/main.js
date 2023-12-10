@@ -446,11 +446,17 @@ let forms = document.querySelectorAll('.modal-form');
 
 forms.forEach(form => {
   let formInputs = form.querySelectorAll('.js-input'),
-    inputPhone = form.querySelector('.js-input-phone');
+    inputPhone = form.querySelector('.js-input-phone'),
+    inputEmail = form.querySelector('.js-input-email');
 
   function validatePhone(phone) {
     let re = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
     return re.test(String(phone));
+  }
+
+  function validateEmail(email) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
   function hasClassInParents(element, className) {
@@ -470,30 +476,28 @@ forms.forEach(form => {
       return true;
     }
 
-    let phoneVal = inputPhone.value,
-      emptyInputs = Array.from(formInputs).filter(input => input.value === '');
-
     formInputs.forEach(function (input) {
-      if (input.value === '') {
+      if (input.classList.contains('js-input-email') && !validateEmail(input.value)) {
+        console.log('Email not valid');
         input.classList.add('error');
-        console.log('input not filled');
+      } else if (input.classList.contains('js-input-phone') && !validatePhone(input.value)) {
+        console.log('Phone not valid');
+        input.classList.add('error');
+      } else if (input.value === '') {
+        console.log('Input not filled');
+        input.classList.add('error');
       } else {
         input.classList.remove('error');
       }
     });
 
-    if (emptyInputs.length !== 0) {
-      console.log('inputs not filled');
+    if (form.querySelector('.js-input-email.error') || form.querySelector('.js-input-phone.error')) {
+      console.log('Validation failed');
       return false;
     }
 
-    if (!validatePhone(phoneVal)) {
-      console.log('phone not valid');
-      inputPhone.classList.add('error');
-      return false;
-    } else {
-      inputPhone.classList.remove('error');
-    }
+    console.log('Form submitted successfully!');
+    return true;
   };
 });
 
@@ -502,6 +506,15 @@ forms.forEach(form => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// Работает с объектами с класом ._lazy
+const lazyMedia = new LazyLoad({
+  elements_selector: '[data-src],[data-srcset]',
+  class_loaded: 'lazy-loaded',
+  use_native: true
+});
+
+// Обновить модуль
+//lazyMedia.update();
 
 
 const openModalBtns = document.querySelectorAll('.open-modal-btn');

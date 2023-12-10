@@ -1794,6 +1794,32 @@ body.locked {
   border-radius: 10000px;
   opacity: 0.7;
   background-color: #F8F8F8;
+  border: 1px solid transparent;
+}
+
+.catalog__form-input.error {
+  color: red;
+  border-color: red;
+}
+
+.catalog__form-input.error::-webkit-input-placeholder {
+  color: red;
+}
+
+.catalog__form-input.error::-moz-placeholder {
+  color: red;
+}
+
+.catalog__form-input.error:-ms-input-placeholder {
+  color: red;
+}
+
+.catalog__form-input.error::-ms-input-placeholder {
+  color: red;
+}
+
+.catalog__form-input.error::placeholder {
+  color: red;
 }
 
 .catalog__form-btn {
