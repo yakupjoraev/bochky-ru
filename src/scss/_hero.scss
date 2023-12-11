@@ -4,6 +4,7 @@
   background-image: url('../img/hero/hero-bg.webp');
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: 100% 830px;
 
   @media (max-width: $breakpoint992) {
     position: relative;
@@ -29,6 +30,8 @@
 
 
   @media (max-width: $breakpoint768) {
+    margin-top: -87px;
+
     &::before {
       height: calc(100% - 100px);
       background-image: url('../img/hero/hero-bg-mobile.webp');
