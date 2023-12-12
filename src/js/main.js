@@ -276,54 +276,7 @@ function toggleAccordion() {
 
 accordionItems.forEach(item => item.addEventListener('click', toggleAccordion));
 
-function map() {
-  const container = document.querySelector('.exhibition-samples__map')
-  if (!container) {
-    return null
-  }
 
-  let coordinates = [
-    [55.786225, 37.248134],
-    [55.779502, 37.855675],
-    // [55.786225, 37.248134],
-    [55.6183, 37.4711],
-    // Add more coordinates as needed
-  ];
-
-  function init() {
-
-
-    let map = new ymaps.Map('exhibition-samples-map', {
-      center: [55.751244, 37.618423],
-      zoom: 9
-    });
-
-    coordinates.forEach(coord => {
-      let placemark = new ymaps.Placemark(coord, {}, {
-        iconLayout: 'default#image',
-        iconImageHref: './img/pin.svg',
-        // iconImageHref: '/local/templates/main/img/icons/pin.svg',
-        iconImageSize: [42, 42],
-        iconImageOffset: [-14, -64]
-      });
-
-      map.geoObjects.add(placemark);
-    });
-
-    map.controls.remove('geolocationControl'); // удаляем геолокацию
-    map.controls.remove('searchControl'); // удаляем поиск
-    map.controls.remove('trafficControl'); // удаляем контроль трафика
-    map.controls.remove('typeSelector'); // удаляем тип
-    map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-    map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-    map.controls.remove('rulerControl'); // удаляем контрол правил
-    // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
-  }
-
-  ymaps.ready(init);
-}
-
-map();
 
 function updateDate() {
   var currentDateElement = document.getElementById('current-date');
@@ -595,3 +548,53 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+
+function map() {
+  const container = document.querySelector('.exhibition-samples__map')
+  if (!container) {
+    return null
+  }
+
+  let coordinates = [
+    [55.786225, 37.248134],
+    [55.779502, 37.855675],
+    // [55.786225, 37.248134],
+    [55.6183, 37.4711],
+    // Add more coordinates as needed
+  ];
+
+  function init() {
+
+
+    let map = new ymaps.Map('exhibition-samples-map', {
+      center: [55.751244, 37.618423],
+      zoom: 9
+    });
+
+    coordinates.forEach(coord => {
+      let placemark = new ymaps.Placemark(coord, {}, {
+        iconLayout: 'default#image',
+        iconImageHref: './img/pin.svg',
+        // iconImageHref: '/local/templates/main/img/icons/pin.svg',
+        iconImageSize: [42, 42],
+        iconImageOffset: [-14, -64]
+      });
+
+      map.geoObjects.add(placemark);
+    });
+
+    map.controls.remove('geolocationControl'); // удаляем геолокацию
+    map.controls.remove('searchControl'); // удаляем поиск
+    map.controls.remove('trafficControl'); // удаляем контроль трафика
+    map.controls.remove('typeSelector'); // удаляем тип
+    map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+    map.controls.remove('rulerControl'); // удаляем контрол правил
+    // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+  }
+
+  ymaps.ready(init);
+}
+
+map();
