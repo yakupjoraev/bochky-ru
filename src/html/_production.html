@@ -8,7 +8,12 @@
 
       <div class="production__desktop">
         <div class="production__desktop-picture">
-          <img class="lazy-loaded" data-src="./img/production/container.webp" alt="container">
+          <picture>
+            <source data-srcset="./img/production/container.webp 1x, ./img/production/container@2x.webp 2x"
+              type="image/webp">
+            <img class="lazy-loaded" data-src="./img/production/container.png"
+              data-srcset="./img/production/container.png 1x, ./img/production/container@2x.png 2x" alt="">
+          </picture>
         </div>
 
         <div class="production__desktop-list">
@@ -105,7 +110,14 @@
 
       <div class="production__mobile">
         <div class="production__mobile-pic">
-          <img class="lazy-loaded" data-src="./img/production/production-mobile.webp" alt="">
+          <picture>
+            <source
+              data-srcset="./img/production/production-mobile.webp 1x, ./img/production/production-mobile@2x.webp 2x"
+              type="image/webp">
+            <img class="lazy-loaded" data-src="./img/production/production-mobile.png"
+              data-srcset="./img/production/production-mobile.png 1x, ./img/production/production-mobile@2x.png 2x"
+              alt="">
+          </picture>
         </div>
 
         <div class="production__slider slider swiper mySwiper" data-slider-container="slider14">
