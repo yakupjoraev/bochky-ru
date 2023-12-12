@@ -1,1 +1,24 @@
-<svg width="41" height="41" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Group 277131600"><g id="Group 277131314"><g id="Group 277131282"><g id="Rectangle 137" filter="url(#filter0_i_556_1149)"><rect x="41" width="40.23" height="40.232" rx="20.115" transform="rotate(90 41 0)" fill="#E95229"/></g></g></g><path id="Rectangle 3365" d="M28.05 17.95l-6.343 6.342a1 1 0 01-1.414 0L13.95 17.95" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><defs><filter id="filter0_i_556_1149" x=".768" y="0" width="40.232" height="40.23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset/><feGaussianBlur stdDeviation="15"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0"/><feBlend in2="shape" result="effect1_innerShadow_556_1149"/></filter></defs></svg>
+<svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 277131600">
+<g id="Group 277131314">
+<g id="Group 277131282">
+<g id="Rectangle 137" filter="url(#filter0_i_556_1149)">
+<rect x="41" y="-0.000488281" width="40.23" height="40.2317" rx="20.115" transform="rotate(90 41 -0.000488281)" fill="#E95229"/>
+</g>
+</g>
+</g>
+<path id="Rectangle 3365" d="M28.0503 17.9492L21.7071 24.2924C21.3166 24.6829 20.6834 24.6829 20.2929 24.2924L13.9497 17.9492" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_i_556_1149" x="0.768311" y="-0.000488281" width="40.2317" height="40.23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="15"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_556_1149"/>
+</filter>
+</defs>
+</svg>
