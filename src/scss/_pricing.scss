@@ -18,6 +18,10 @@
     background-size: auto 315px;
   }
 
+  @media (max-width: $breakpoint480) {
+    background-size: auto 290px;
+  }
+
 
   .container {
     height: 100%;
@@ -86,6 +90,10 @@
       font-size: 18px;
       font-weight: 300;
       line-height: 138%;
+    }
+
+    @media (max-width: $breakpoint480) {
+      justify-content: center;
     }
   }
 

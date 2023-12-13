@@ -1,6 +1,6 @@
 .info {
   position: relative;
-  padding: 120px 0;
+  padding: 60px 0 120px 0;
   overflow: hidden;
   background: #FBFBFB;
 
@@ -85,7 +85,7 @@
   // .info__item
 
   &__item {
-    margin-top: 100px;
+    margin-top: 140px;
 
     @media (max-width: $breakpoint768) {
       width: 100%;
@@ -113,7 +113,7 @@
     }
 
     @media (max-width: $breakpoint480) {
-      grid-template-columns: 245px 345px 345px;
+      grid-template-columns: 200px 310px 340px;
     }
   }
 
@@ -164,7 +164,7 @@
 
     @media (max-width: $breakpoint768) {
       & {
-        order: 3;
+        order: 2;
       }
     }
   }
@@ -273,11 +273,11 @@
 
       @media (max-width: $breakpoint768) {
         &:nth-child(1) {
-          order: 3;
+          order: 2;
         }
 
         &:nth-child(3) {
-          order: 2;
+          order: 3;
         }
       }
 
@@ -303,6 +303,9 @@
       }
 
       @media (max-width: $breakpoint768) {
+        justify-content: flex-start;
+        text-align: left;
+
         & {
           order: 1;
         }
@@ -350,7 +353,7 @@
       border-left: 0;
 
       & {
-        order: 3;
+        order: 2;
       }
     }
   }
@@ -428,7 +431,7 @@
     @media (max-width: $breakpoint768) {
 
       & {
-        order: 2;
+        order: 3;
       }
     }
   }

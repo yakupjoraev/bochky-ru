@@ -16,6 +16,10 @@
     padding: 60px 0;
   }
 
+  @media (max-width: $breakpoint480) {
+    margin-top: -20px;
+  }
+
   // .production__inner
 
   &__inner {}
